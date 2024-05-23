@@ -1,0 +1,72 @@
+      @font-face {
+        font-family: 'Fredoka';
+        src: url('font.woff2') format('woff2');
+      }
+      .font-fredoka {
+        font-family: 'Fredoka'
+      }
+      body {
+        height: 100vh;
+      }
+      html.chrome *:hover > .decorate > div,
+      html.chrome .decorate-parent:hover > .decorate > div {
+                --tw-scale-x:8;--tw-scale-y:8;transform: scale3d(var(--tw-scale-x),var(--tw-scale-y),1);
+        --tw-bg-opacity: 0.15;
+      }
+      
+      html.chrome * > .decorate.out > div,
+      html.chrome .decorate-parent > .decorate.out > div {
+              --tw-scale-x:8;--tw-scale-y:8;}
+      *:hover > .decorate.out > div,
+      .decorate-parent:hover > .decorate.out > div {
+        --tw-scale-x:1;--tw-scale-y:1
+      }
+      .rounded-inherit {
+        border-radius: inherit;
+      }
+      .hover\:overflow-scroll:hover {
+        overflow-y: scroll;
+      }
+      .not-here:hover, .not-here:hover * {
+        cursor: not-allowed;
+        touch-action: none;
+      }
+      .not-here button {
+        pointer-events: none;
+        cursor: not-allowed !important;
+      }
+      .not-here {
+        opacity: 0.5 !important;
+      }
+      .custom-cursor, .custom-cursor * {
+        cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewport="0 0 28 28" style="fill:black;font-size:16px"><text y="50%">🔑</text></svg>') 16 0, auto;
+      }
+      * {
+        -webkit-tap-highlight-color: transparent;
+      }
+      body.notify:hover, body.notify *:not(.not-here):not(.not-here *):hover, *.highlight,
+      *.highlight-ol li/*:not(.ignore)*/:hover {
+        transition: 0s;
+        border: 2px dashed rgb(167 50 20 / 60%);
+        background-color: rgb(167 50 20 / 6%);
+      }
+      
+      /*
+      Moved here for it to be replaced by style.innerText.replace
+      */
+      .editor .dom-content li .wrap-on-line *:not(.decorate):not(.decorate > *):not(.tooltip),
+      .editor .dom-content li:focus-within .wrap-on-line *:not(.decorate):not(.tooltip) {
+       position: relative;
+      }
+      .top-unset {
+       top: unset;
+      }
+      .left-unset {
+       left: unset;
+      }
+      .bottom-unset {
+       bottom: unset;
+      }
+      .right-unset {
+       right: unset;
+      }

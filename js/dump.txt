@@ -1,0 +1,45 @@
+:root{--variable:value}
+html {
+  scroll-behaviour: smooth;
+}
+.w-1/2 {
+  content-visibility: visible;
+  width: 50%
+}
+@media (min-width: 500px){
+  [close]{
+    visibility: hidden
+  }
+  .opaque {
+    opacity: 1
+  }
+  .color {color: auto; background:inherit;border-color: unset;}
+  hidden {
+    display:none;
+  }.bg-unset{
+    background-color: unset 
+  }
+}
+@keyframes spin{
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+after-at-rule {
+  css-lvl-1: value
+}
+.selector {
+  <property>:<value>;
+}.wireframe {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAICAYAAAA4GpVBAAAAAXNSR0IArs4c6QAAABRJREFUGFdj+P///38GdOLgdnQxAHSiH1tWgHpMAAAAAElFTkSuQmCC);
+  color: black
+}
+@import(font.woff2);
+@page (media:print) {
+  html * {
+    border: 2px double black;
+  }
+}
