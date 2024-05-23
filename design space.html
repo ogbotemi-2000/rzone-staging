@@ -1,0 +1,49 @@
+<!DOCTYPE HTML><head>
+    <title>Prototypes</title><meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/tailwind.min.css">
+    <link rel="stylesheet" href="../css/page.css"><script src="../js/utils.js"></script>
+    <script src="../js/ripples.js"></script><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+  </head>
+  <body>
+    
+    <canvas height="300" width="200" class="webgl shadow float-right rounded-bl-3xl hidden" data-engine="three.js r159" style="touch-action: none; width: 200px; height: 300px;"></canvas><nav class="w-full z-3 __grid__ fixed"><button class="rounded-l m-2 left-0 absolute p-5 pr-2 rounded-r-3xl bg-yellow-200" onmouseover="objWalk(this, ['nES','cL']).add('show')"><div class="shadow bg-yellow-50 left-0 absolute top-0 bottom-0 p-2 rounded-lg"></div>site navigation</button>
+
+<div class="no-focus-within no-hover no-focus -slide-y tooltip absolute [&>*]:inline-block vh-full w-full show"><div class="align-top h-full w-1/2"><div class="h-1/2 [&>*]:inline-block"><div class="align-top h-full w-1/2">
+    <div class="h-1/2 [&>*]:inline-block"><div class="w-1/2 h-full">
+    <div class="relative text-center h-1/2 bg-gray-700 text-white"><button class="text-current absolute inset-0">Home</button></div><div class="relative text-center h-1/2 bg-white"><button class="ripple text-current absolute inset-0" onclick="objWalk(this, [{7:'pN'},'cL']).remove('show')">close</button></div>
+</div><div class="h-full w-1/2 bg-gray-100"></div></div><div class="h-1/2 bg-yellow-100"></div>
+</div><div class="h-full w-1/2 bg-blue-100"></div></div><div class="h-1/2 bg-gray-100"></div></div><div class="relative w-1/2 h-full"><div class="no-hover no-focus tooltip slide bg-red-200 absolute inset-0 show" style="--x: 0%;"></div><div style="background-image: url(../img/canyon.png)" class="absolute inset-0"></div><div class="relative h-full w-full" style="background: #00000095;"></div></div></div></nav><main class="vh-full overflow-scroll"><section class="vh-full"></section><section class="[&>*]:inline-block vh-full flex"><aside class="sm:relative absolute p-4 tooltip no-hover no-focus slide flex-1 sm:show" style="z-index:1">some text here for context</aside><main style="background:url(palette-light.png) center/cover repeat" class="h-full relative w-full sm:w-4/5 md:w-3/4"><div class="rounded-inherit bg-gradient-to-br from-blue-400 via-red-700 to-yellow-400 opacity-60 absolute inset-0 duration-300 ease-out" style="mix-blend-mode: color-burn;"></div><p class="relative text-white p-10">another sentence that is not an example of a speeech synthesis in English</p></main></section>
+
+<br><section class="relative">
+
+<img src="../img/7--Recovered.png" class="w-60 sm:w-auto m-auto">
+<img src="../img/7-no fill.png" class="mt-5 w-60 sm:w-auto sm:mt-12 m-auto">
+
+</section></main>
+
+
+
+    <script type="module" src="./main.js"></script>
+<script>w.onbeforeunload=_=>'Return this string to prompt before leaving page';
+  w.addEventListener('DOMContentLoaded', main=>{ animations.addRippleAnimations(),
+    (main=qs('main')).onscroll = ev=>{
+        
+    },
+    main.omousemove=(e, sL, pXY=[], scrolled=[])=>{
+     if (!e) var e = window.event;
+        scrolled = ['Left', 'Top'].map(mv=>d.body.scroll+mv + d.body.scroll+mv);
+		if (e.pageX || e.pageY) 	{
+			pxY = [e.pageX, e.pageY]
+		}
+		else if (e.clientX || e.clientY) 	{
+			pXY = [e.clientX + scrolled[0], e.clientY + scrolled[1]]
+		}
+    }
+  })
+    
+</script>
+  
+
+</body>
