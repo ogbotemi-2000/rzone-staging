@@ -18,7 +18,7 @@
   cursor: not-allowed;
   pointer-events: none;
   filter: contrast(0.5);
-} 
+}
 @keyframes to-fro-x {
 	0% {
 		transform: scaleX(0);
@@ -448,14 +448,26 @@ with visibility: visible; triggers a hover event that then makes tooltip visible
 
 	 z-index: 3;
 
-	 --x: 0%;
+	 --x: 0%; --y:0%;
 
+}
+.base\:text-left {
+	text-align: left;
 }
  .base\:relative  {
     position: relative 
   }
+.base\:inline-block  {
+    display: inline-block; 
+  }
   .base\:left-0 {
     left: 0px;
+  }
+  .base\:float-right {
+    float: right;
+  }
+  .base\:float-left {
+    float: left;
   }
 }
 
@@ -469,6 +481,7 @@ with visibility: visible; triggers a hover event that then makes tooltip visible
 	 opacity: 1;
 	 z-index: 3;
 	 --x: 0%;
+	 --y: 0%;
 
 }
   .tooltip.sm\:show.no-hover, .tooltip.sm\:show.no-focus  {
@@ -523,7 +536,7 @@ with visibility: visible; triggers a hover event that then makes tooltip visible
 	 z-index: 3;
 
 	 --x: 0%;
-
+     --y: 0%;
 }
 
  .tooltip.lg\:show.no-hover, .tooltip.lg\:show.no-focus, .tooltip.lg\:show.no-hover .tooltip.show,.tooltip.lg\:show.no-focus .tooltip.show  {

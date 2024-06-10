@@ -46,6 +46,28 @@ function save(blob, name, flag) {
 /*end*/
 
 
+
+/*self contained component*/
+function grow_shrink(e,i,c,n,d,k, cls){
+  d=grow_shrink,n={500:'base',640:'sm',768:'md',1024:'lg',1280:'xl'},
+  c=document.createElement("div"),
+  !d.cached&&(d.cached={}),!d.arr&&(d.arr=[].slice.call((d.el=window.growShrink).querySelectorAll(".fluid"))),
+  !d.dump&&(d.dump=d.el.querySelector("a+div>div")),
+  (e=(k=Object.keys(n).filter((c,n)=>(i=n,c>e)))[0]), k = new RegExp(k.map(e=>n[e]+':show').join('|')),
+  d.vw!==e&&!d.cached[d.vw=e]&&d.arr.forEach((n,r,o)=>{
+    (n=n.cloneNode(!0)).classList.add(c.className=d.el.getAttribute('data-classname'));
+    if(((cls=n.classList)+'').match(k)) cls.remove('clicked'), (cls+'').replace(/(base|sm|md|lg|xl):show/, function(a) {
+      cls.remove(a, 'fluid')
+    }), /* n.className=l?"clicked":"",*/ c.appendChild(n), !d.cached[e]&&(d.cached[e]=c)
+  }),d.dump.replaceChild(d.cached[e]||c,d.dump.firstChild)}
+
+window.addEventListener('DOMContentLoaded', _=>{
+  window.growShrink&&(grow_shrink(innerWidth), window.onresize=_=>grow_shrink(innerWidth))
+});
+
+/*end*/
+
+
 /*globals*/
 (objWalk.setDict =function(arr){
   objWalk.dict||={};

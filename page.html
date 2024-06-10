@@ -1,0 +1,181 @@
+<!DOCTYPE HTML><head>
+    <title>Prototypes</title><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="css/tailwind.min.css">
+    <link rel="stylesheet" href="css/page.css"><link rel="stylesheet" href="css/all.min.css"><script src="js/utils.js"></script>
+    <script src="js/ripples.js"></script><script src="js/index.js"></script><script src="js/rellax.min.js"></script><style>.word-space {word-spacing: 10px;}</style>
+    
+    <style class="preload-styles">.hover\:overflow-visible:hover {overflow:visible}
+        html {
+        scroll-behavior: smooth;
+        --bg-opacity-pad:0;
+        }
+        /*3d transform transition of 'Roadmap'*/ 
+        html.loaded .locked-in {
+            opacity: .999;
+            transform: rotateX(0deg);
+        }
+        .locked-in {
+            opacity: 0.01;
+            --scaffold-delay: 0ms;
+            transform-style: preserve-3d;
+            will-change: transform;
+            transform: rotateX(90deg) translate3d(-50px, 100%, 0px);
+            transform-origin: center bottom;
+            transition: transform 1s cubic-bezier(.215,.61,.355,1), opacity .35s linear;
+            transition-delay: calc(var(--index)* .1s + .15s + var(--scaffold-delay));
+            transform-style: preserve-3d;
+        }
+        /* scaffold */
+        .scaffold > div { transition: transform .6s var(--delay) cubic-bezier(0.645, 0.045, 0.355, 1); }
+        html.preloaded .scaffold { pointer-events: none; }
+        html.preloaded .scaffold > div { --tw-translate-y: -100%; }
+        
+        .\[\&\>\*\]\:animate-y-full > * {
+            animation: translate-y-full 1s var(--delay) cubic-bezier(0.37, 0, 0.63, 1) forwards;
+            --my: 200%;
+            display: inline-block;
+        }
+        @keyframes translate-y-full { 0% { transform: translateY(0%); } 50% { transform: translateY(var(--my));}}
+        </style>
+  </head>
+  <body>
+    <aside class="inset-0 scaffold fixed" style="z-index:5;">
+        <div class="inset-0 absolute bg-red-400 transform-gpu" style="--delay: 280ms;" ontransitionend="afterScaffold(),html.classList.add('loaded')"></div><div class="inset-0 absolute bg-yellow-400 transform-gpu" style="--delay: 150ms;"></div><div class="inset-0 absolute bg-blue-100 text-center transform-gpu" style="--delay: 0s;">
+        <h2 onanimationend="objWalk(html, 'cL').add('preloaded')" class="duration-300 ease-out top-1/3 whitespace-pre relative tracking-wide [&>*]:animate-y-full precise-typo"><span class="font-fredoka font-semibold" style="--delay:0s">R</span><span class="font-fredoka font-semibold" style="--delay:0.02s">Z</span><span class="font-fredoka font-semibold" style="--delay:0.04s">O</span><span class="font-fredoka font-semibold" style="--delay:0.06s">N</span><span class="font-fredoka font-semibold" style="--delay:0.08s">E</span><span class="font-fredoka font-semibold" style="--delay:0.1s"> </span><span class="mx-2" style="--delay:0.12s">•</span><span class="__morph" style="--delay:0.14s">c</span><span class="__morph" style="--delay:0.16s">a</span><span class="__morph" style="--delay:0.18s">r</span><span class="__morph" style="--delay:0.2s">g</span><span class="__morph" style="--delay:0.22s">o</span></h2></div>
+    </aside>
+
+    <canvas height="300" width="200" class="hidden webgl shadow absolute right-0 rounded-bl-3xl" data-engine="three.js r159" style="touch-action: none; width: 200px; height: 300px;"></canvas>
+    
+    
+    <nav class="no-hover no-focus -slide-y tooltip text-center text-black w-full z-3 fixed bg-white text-xs" style="z-index:2"><div class="text-sm text-left w-full tooltip no-hover no-focus no-focus-within -slide-y bg-inherit mt-4 px-4 show relative" id="topCta" style="z-index:1"><i class="text-blue-300 fa fa-envelope ml-4 mr-3"> </i><a class="relative" href="mailto:info@rzoneenterprises.com">info@rzoneenterprises.com</a><i class="fa fa-phone-alt ml-7 mr-1 text-blue-300"> </i><div class="text-xs inline-block relative cursor-pointer"><p tabindex="0" class="sm:hidden inline-block p-2 border-gray-400 rounded-br-md border-b border-r">hotlines ⇲</p><div class="-m-0.5 [&>*]:p-2 top-full w-auto absolute [&>*]:w-full [&>*]:block tooltip [&>*]:relative sm:relative [&>*]:inline-block sm:show" onclick="let t,o=objWalk; (t=event.target).tagName.match(/button|div/i)&&(event.preventDefault(), o(t, 'fEC').textContent=copyTextToClipboard(o(t, 'pN').href.replace('tel:', '')))"><a class="[&>*]:inline-block sm:bg-transparent bg-gray-50 rounded-t-md hover:bg-gray-200 px-4" href="tel:+2348033132092">Nigeria<hr class="rounded-full border-current align-middle mx-2 border-2"><code class="py-2 whitespace-pre">+234 803 313 2092</code><button class="-top-1.5 bg-blue-200 rounded-full text-base p-3 absolute tooltip fa fa-copy text-gray-600 p-2-"><div class="mr-1 top-1 right-full bg-blue-50 font-normal no-hover tooltip absolute p-2">copied</div></button></a><a class="[&>*]:inline-block sm:bg-transparent bg-gray-50 rounded-b-md hover:bg-gray-200 px-4" href="tel:+2347066049944">Nigeria<hr class="rounded-full border-current align-middle mx-2 inline-block border-2"><code class="py-2 whitespace-pre">+234 706 604 9944</code><button class="-top-1.5 bg-blue-200 rounded-full text-base p-3 absolute tooltip fa fa-copy text-gray-600 p-2"><div class="ml-1 top-1 right-full bg-blue-50 font-normal no-hover tooltip absolute p-2">copied</div></button></a></div></div></div><button class="mt-5 relative ripple text-current relative p-3 border-r-2 border-blue-400" onclick="objWalk(this, ['pN','lEC','cL']).add('show')"><i class="fa fa-plus mr-2"></i>explore</button>
+<div id="growShrink" class="inline-block text-lg whitespace-pre text-current rounded-xl font-bookweb w-1/2 show md:w-2/3 sm:mx-6" style="--index: 0.016374705863058756;"><div class="[&>*]:align-middle rounded-inherit [&>*]:rounded-inherit py-1 inline-block [&>*]:p-xy" style="--px:0.8em; --py:0.5em" __onmousemove__="let index, t = event.target, a=slice(this.children, 0, -1);/*hrTransit(this, ind)*/ a.find(e=>e===t)&&(index=t.getAttribute('data-hrindex'))&&setTimeout(_=>{console.log('::INDEX::', index), hrTransit(this, index)}, 500)"><a href="javascript:void(0)" class="hover:bg-blue-100" data-hrindex="1"><img src="img/Logo-colour-112.png " class="w-16"></a><a href="projects.html" class="hover:bg-blue-100 fluid base:show" data-hrindex="2">Services<div class="tooltip absolute bg-blue-50 p-2 w-full rounded-2xl to-bottom"></div></a><a href="integrated.html" class="fluid sm:show hover:bg-blue-100" data-hrindex="4">About us</a><a href="integrated.html" class="fluid md:show hover:bg-blue-100" data-hrindex="3">Naija Shipping in UK</a><div class="md:absolute md:invisible relative"><button class="hover:bg-purple-200 ripple relative text-current" style="border-color: currentcolor;">•••</button><div style="padding:0px;" class="bg-blue-50"></div></div></div></div><button class="ripple relative rounded bg-blue-200 px-4 p-3 rounded-full show sm:mr-2" style="overflow:visible"><i class="fa fa-check fa-phone sm:invisible sm:absolute"></i><pre class="inline-block font-sans sm:relative absolute tooltip sm:show bg-inherit rounded sm:bg-transparent p-3 sm:p-0 sm:inset-0 text-left top-full to-bottom" style="z-index: auto;">contact sales</pre></button><div class="top-0 __grid__ no-focus-within no-hover no-focus -slide-y tooltip absolute [&>*]:inline-block vh-full w-full"><div class="align-top h-full w-1/2"><div class="h-1/2 [&>*]:inline-block"><div class="align-top h-full w-1/2">
+    <div class="h-1/2"><div class="sm:w-1/3 w-full inline-block h-full">
+    <div class="relative text-center h-1/2 bg-gray-700 text-white"><button class="text-current absolute inset-0">Home</button></div><div class="relative text-center h-1/2 bg-blue-300"><button class="ripple text-current absolute inset-0" onclick="objWalk(this, [{7:'pN'},'cL']).remove('show')">close</button></div>
+</div><div class="sm:inline-block hidden h-full w-2/3 bg-gray-100"></div></div><div class="h-1/2 bg-yellow-100"></div>
+</div><div class="h-full w-1/2 bg-blue-100"></div></div><div class="h-1/2 bg-gray-100"></div></div><div class="relative w-1/2 h-full"><div class="no-hover no-focus tooltip slide bg-red-200 absolute inset-0 show" style="--x: 0%;"></div><div style="background-image: url(img/canyon.png)" class="absolute inset-0"></div><div class="relative h-full w-full" style="background: #00000095;"></div></div></div></nav>
+
+<main class="overflow-scroll text-black vh-full"><section class="p-8 relative mt-28">
+    
+<div data-rellax-speed="-5" class="md:w-5/6 lg:w-2/3 m-auto [&>*]:inline-block [&>*]:align-middle md:p-4 bg-white rellax relative z-1 rounded-3xl" data-rellax-tablet-speed="-5" data-rellax-desktop-speed="-6.5"><div class="sm:w-2/3"><h1 style="font-size: clamp(2.10938rem, 1.685rem + 1.7vw, 2.5rem); " class="font-fredoka text-center sm:text-left locked-in font-bold">More Than Just A <span class="inline-block relative text-blue-700"><p class="tooltip slide no-hover no-focus show relative">Logistic</p>
+<p class="left-0 top-0 tooltip no-hover no-focus slide-y absolute">Swift</p>
+<p class="left-0 top-0 tooltip no-hover no-focus slide-y absolute">Timely</p></span> Shipment</h1><div class="mt-7 sm:text-left text-center [&>*]:inline-block [&>*]:p-xy divide-x-2 divide-current text-sm [&>*]:relative whitespace-pre [&>*]:whitespace-normal" style="--px:1.2em; --py:0.1em;"><a style="overflow:visible; --delay:0s; --my:10%;" class="ripple" href="javascript:void(0)"><i class="z-2 p-2 align-middle inline-block text-2xl fa fa-ship text-gray-700"></i>
+      <pre class="font-normal font-sans base:relative absolute inline-block tooltip base:show rounded base:bg-transparent base:p-0 bottom-full base:bottom-0 left-1/3 base:left-0">Cargo</pre>
+      </a><a style="overflow: visible; --delay: 0.04s; --my: 10%;" class="ripple" href="javascript:void(0)"><i class="z-2 p-2 align-middle inline-block text-2xl fa fa-shipping-fast text-gray-700"></i>
+      <pre class="font-normal font-sans base:relative absolute inline-block tooltip base:show rounded base:bg-transparent base:p-0 bottom-full base:bottom-0 left-3 base:left-0">Shipment</pre>
+      </a><a style="overflow: visible; --delay: 0.08s; --my: 10%;" class="ripple" href="javascript:void(0)" onanimationend="console.log('::ANIM - END::'), [0,1].forEach(i=>objWalk(this, ['pN', 'cL'])[cLs(i)]('[&>*]:animate-y-full'))"><i class="z-2 p-2 align-middle inline-block text-xl fa fa-truck-loading text-gray-700"></i>
+      <pre class="font-normal font-sans base:relative absolute inline-block tooltip base:show rounded base:bg-transparent base:p-0 bottom-full base:bottom-0 left-1/4 base:left-0">Freight</pre>
+      </a></div></div><p class="top-0 ml-4 text-sm no-hover no-focus no-focus-within tooltip sm:relative absolute slide sm:show w-1/4 right-0" style="z-index:1">Rzone delivers packages quickly, safely. We've made hassle-free deliveries intrinsic to us</p><div class="md:-mb-16 -mb-11 left-2/3 text-white z-1 
+mb-1.5 border-transparent border-4 bg-white relative p-2 inline-block rounded-full" style="border-bottom-color:currentColor"><div class="text-sm p-2 text-white text-center px-4 rounded-inherit" style="background:#222;">Get <br>started <br><i class="fa fa-external-link-alt"></i><div class="top-1/2 text-white  border-transparent -mr-2.5 right-full rounded-inherit p-6 absolute border-8 transform rotate-12" style="border-top-color: currentColor;--tw-rotate: 27deg;"></div><div class="top-1/2 text-white  border-transparent -ml-2.5 left-full rounded-inherit p-6 absolute border-8 transform" style="border-top-color: currentColor;--tw-rotate: -27deg;"></div></div>
+</div></div>
+      <div class="md:mt-1.5 mt-0.5 duration-500 relative">
+<div class="relative rounded-3xl"><img src="img/hero-bg.png" class="rounded-inherit tooltip slide-y no-hover no-focus"><div class="relative">
+    
+</div>
+<div class="w-full rounded-b-3xl p-4 absolute bottom-0 text-white precise-typo [&>*]:inline-block [&>*]:align-middle [&>*]:whitespace-normal whitespace-pre __marquee__ space-x-4 overflow-x-hidden font-bookweb" style="background:#222;"><span class="ml-5">SHIPMENT</span><i class="text-xl fa fa-star"></i><span>FREIGHT</span><i class="text-xl fa fa-star"></i><span>CARGO</span><i class="text-xl fa fa-star"></i><span>CARGO</span><i class="text-xl fa fa-star"></i><span>SHIPMENT</span><i class="fa fa-star text-xl"></i><span>FREIGHT</span><i class="fa fa-star text-xl"></i><span>CARGO</span><i class="text-xl fa fa-star"></i><span>SHIPMENT</span><i class="text-xl fa fa-star"></i><span>FREIGHT</span><i class="text-xl fa fa-star"></i><span>CARGO</span><i class="text-xl fa fa-star"></i><span>SHIPMENT</span><i class="text-xl fa fa-star"></i><span>FREIGHT</span></div></div></div>
+
+
+</section>
+
+<section class="relative mt-28">
+    <img src="img/floating-container.png" class="md:absolute md:block hidden right-10 w-96 top-0" style="animation:anim-round .8s ease-out infinite; --_reach: calc(-1*var(--reach)); --reach: 0.1rem;"><article class="relative p-10"><div class="w-4/5"><h2 class="font-bookweb precise-typo tracking-wide" style="font-size: clamp(2.10938rem, 1.685rem + 1.7vw, 2.5rem);">Deliver your packages to their destination, faster</h2>
+<div class="text-sm">parcels, cargos, shipments and the general paraphernalia of package deilvery.<p class="mt-3 text-blue-700">Our services exist at the cross-roads of package delivery by <a class="border-current px-px inline-block border-b">ground</a> and <a class="border-current px-px inline-block border-b">sea</a></p></div></div>
+    <div class="rounded-xl md:w-2/3"><div class="rounded-inherit mt-4 w-full relative h-96 bg-cover bg-center sm:bg-right" style="background-image:url(img/ship-under-bridge.webp)"><div class="rounded-inherit inset-0 absolute bg-black" style="--tw-bg-opacity:0.5;mix-blend-mode: soft-light;"></div></div>
+<div class="relative -mt-5 font-bookweb text-black [&>*]:inline-block bg-blue-300 p-4 sm:w-5/6">
+    <div class="mr-16 mb-2">
+    <h3 class="precise-typo tracking-widest">25+</h3><p>trade routes used</p>
+</div>
+<div class="mr-16">
+    <h3 class="precise-typo tracking-widest">950+</h3><p>cargos by ships</p>
+</div><div>
+    <h3 class="precise-typo tracking-widest">30M+</h3><p>shipments by road</p>
+</div></div></div>
+</article>
+</section>
+
+<section class="bg-blue-100 my-20"><main class="[&>*]:inline-block [&>*]:align-top [&>*]:text-left text-center  md:flex justify-between p-10"><div style="background-image:url(img/grand-ship.webp)" class="w-full mr-5 md:w-1/3 h-96 bg-cover bg-center rounded-xl mb-5"></div><aside class="text-center md:w-2/3 flex-1"><h3 class="font-bookweb precise-typo word-space">Logistics Beyond Expectations</h3><p class="mt-1 text-sm mb-3 md:w-2/3">Our servies are geared towards underpromising and over delivering - our experience makes us factor in various scenarios undiscussed in our client requests</p>
+<div class="sm:flex m-auto [&>*]:p-xy rounded-lg [&>*]:inline-block" style="--px:1em; --py:var(--px)">
+<div class="flex-1 mb-4 sm:text-left text-center sm:w-1/3 shadow md:border-r-2 border-gray-800"><i class="text-blue-300 block fa fa-flag precise-typo mb-2"></i>
+<h2 class="word-space font-bookweb precise-typo">Our mission</h2><p class="text-sm">To eradicate the pervasive myth that delivery of goods and services via a third-party is prone to loss or misdirecction. We have been heralded for our quick delivery time, guarrantee of delivery and ease of use
+</p></div>    
+<div class="flex-1 sm:text-left text-center sm:w-1/3 shadow"><i class="text-blue-300 block fa fa-crown precise-typo mb-2"></i>
+<h2 class="word-space font-bookweb precise-typo">Our mission</h2><p class="text-sm">To eradicate the pervasive myth that delivery of goods and services via a third-party is prone to loss or misdirecction. We have been heralded for our quick delivery time, guarrantee of delivery and ease of use
+</p></div></div><button class="p-3 border-2 border-blue-300 rounded-full px-4 text-current">learn more
+</button></aside></main><aside class="[&>*]:align-middle [&>*]:text-left relative mt-10 text-center [&>*]:inline-block"><div class="p-4 px-12 sm:p-4 mb-20 sm:m-0"><h4 class="font-bookweb precise-typo word-space text-blue-700">Round the clock. Around the world</h4>
+<p>Most major zones and regions of the world are among the routes we take</p></div><div class="relative -mb-1"><div class="top-1/4 left-1/2 m-auto w-2 p-1 absolute"><div class="-inset-14 rounded-full bg-blue-300 absolute" style="animation:anim-round 2.8s ease-out infinite;--_reach: calc(-1*var(--reach));--reach: 60%;--tw-bg-opacity:0.6;"></div></div><img src="img/7--Recovered.png" class="relative w-60 sm:w-auto m-auto filter"></div></aside></section><section class="p-12 bg-blue-900" style="--tw-bg-opacity:0.1"><div><button class="px-4 border-current border-2 rounded-full p-2 float-right mt-2 text-current">learn more</button><h3 class="font-bookweb word-space precise-typo mb-10">We help transport your future</h3>
+</div>
+<main class="text-center [&>*]:text-left [&>*]:p-xy [&>*]:relative [&>*]:inline-block space-y-4" style="--px:1.2rem; --py:var(--px)"><div onmouseover="objWalk(this, 'fEC').style.background='url(img/palette-light.png) center/cover repeat'" onmouseout="objWalk(this, 'fEC').style.background='inherit'" class="bg-inherit sm:w-96 w-full m-3"><aside style="background: inherit;" class="inset-0 absolute duration-300 ease-out"><div class="rounded-inherit bg-gradient-to-br from-yellow-800 via-blue-900 to-red-800 absolute inset-0 duration-300 ease-out opacity-70 mix-blend-color-burn"></div>
+</aside><div class="relative">
+    <div class="text-blue-100 mb-3"><h4 class="font-bookweb text-lg sm:text-xl">Ocean Freights</h4><i class="fa fa-ship"></i></div>
+<p class="text-white text-xs sm:text-sm leading-6">We transport light and heavy cargo via the shortest routes that have been extensively mapped from our experience</p>
+<i class="fa fa-arrow-right text-blue-200"></i></div></div><div onmouseover="objWalk(this, 'fEC').style.background='url(img/palette-light.png) center/cover repeat'" onmouseout="objWalk(this, 'fEC').style.background='inherit'" class="bg-inherit sm:w-96 w-full m-3"><aside style="background: inherit;" class="inset-0 absolute duration-300 ease-out"><div class="rounded-inherit bg-gradient-to-br from-yellow-800 via-blue-900 to-red-800 absolute inset-0 duration-300 ease-out opacity-70 mix-blend-color-burn"></div>
+</aside><div class="relative">
+    <div class="text-blue-100 mb-3"><h4 class="font-bookweb text-lg sm:text-xl">Ocean Freights</h4><i class="fa fa-ship"></i></div>
+<p class="text-white text-xs sm:text-sm leading-6">We transport light and heavy cargo via the shortest routes that have been extensively mapped from our experience</p>
+<i class="fa fa-arrow-right text-blue-200"></i></div></div><div onmouseover="objWalk(this, 'fEC').style.background='url(img/palette-light.png) center/cover repeat'" onmouseout="objWalk(this, 'fEC').style.background='inherit'" class="bg-inherit sm:w-96 w-full m-3"><aside style="background: inherit;" class="inset-0 absolute duration-300 ease-out"><div class="rounded-inherit bg-gradient-to-br from-yellow-800 via-blue-900 to-red-800 absolute inset-0 duration-300 ease-out opacity-70 mix-blend-color-burn"></div>
+</aside><div class="relative">
+    <div class="text-blue-100 mb-3"><h4 class="font-bookweb text-lg sm:text-xl">Ocean Freights</h4><i class="fa fa-ship"></i></div>
+<p class="text-white text-xs sm:text-sm leading-6">We transport light and heavy cargo via the shortest routes that have been extensively mapped from our experience</p>
+<i class="fa fa-arrow-right text-blue-200"></i></div></div><div onmouseover="objWalk(this, 'fEC').style.background='url(img/palette-light.png) center/cover repeat'" onmouseout="objWalk(this, 'fEC').style.background='inherit'" class="bg-inherit sm:w-96 w-full m-3"><aside style="background: inherit;" class="inset-0 absolute duration-300 ease-out"><div class="rounded-inherit bg-gradient-to-br from-yellow-800 via-blue-900 to-red-800 absolute inset-0 duration-300 ease-out opacity-70 mix-blend-color-burn"></div>
+</aside><div class="relative">
+    <div class="text-blue-100 mb-3"><h4 class="font-bookweb text-lg sm:text-xl">Ocean Freights</h4><i class="fa fa-ship"></i></div>
+<p class="text-white text-xs sm:text-sm leading-6">We transport light and heavy cargo via the shortest routes that have been extensively mapped from our experience</p>
+<i class="fa fa-arrow-right text-blue-200"></i></div></div><div onmouseover="objWalk(this, 'fEC').style.background='url(img/palette-light.png) center/cover repeat'" onmouseout="objWalk(this, 'fEC').style.background='inherit'" class="bg-inherit sm:w-96 w-full m-3"><aside style="background: inherit;" class="inset-0 absolute duration-300 ease-out"><div class="rounded-inherit bg-gradient-to-br from-yellow-800 via-blue-900 to-red-800 absolute inset-0 duration-300 ease-out opacity-70 mix-blend-color-burn"></div>
+</aside><div class="relative">
+    <div class="text-blue-100 mb-3"><h4 class="font-bookweb text-lg sm:text-xl">Ocean Freights</h4><i class="fa fa-ship"></i></div>
+<p class="text-white text-xs sm:text-sm leading-6">We transport light and heavy cargo via the shortest routes that have been extensively mapped from our experience</p>
+<i class="fa fa-arrow-right text-blue-200"></i></div></div><div onmouseover="objWalk(this, 'fEC').style.background='url(img/palette-light.png) center/cover repeat'" onmouseout="objWalk(this, 'fEC').style.background='inherit'" class="bg-inherit sm:w-96 w-full m-3"><aside style="background: inherit;" class="inset-0 absolute duration-300 ease-out"><div class="rounded-inherit bg-gradient-to-br from-yellow-800 via-blue-900 to-red-800 absolute inset-0 duration-300 ease-out opacity-70 mix-blend-color-burn"></div>
+</aside><div class="relative">
+    <div class="text-blue-100 mb-3"><h4 class="font-bookweb text-lg sm:text-xl">Ocean Freights</h4><i class="fa fa-ship"></i></div>
+<p class="text-white text-xs sm:text-sm leading-6">We transport light and heavy cargo via the shortest routes that have been extensively mapped from our experience</p>
+<i class="fa fa-arrow-right text-blue-200"></i></div></div><div onmouseover="objWalk(this, 'fEC').style.background='url(img/palette-light.png) center/cover repeat'" onmouseout="objWalk(this, 'fEC').style.background='inherit'" class="bg-inherit sm:w-96 w-full m-3"><aside style="background: inherit;" class="inset-0 absolute duration-300 ease-out"><div class="rounded-inherit bg-gradient-to-br from-yellow-800 via-blue-900 to-red-800 absolute inset-0 duration-300 ease-out opacity-70 mix-blend-color-burn"></div>
+</aside><div class="relative">
+    <div class="text-blue-100 mb-3"><h4 class="font-bookweb text-lg sm:text-xl">Ocean Freights</h4><i class="fa fa-ship"></i></div>
+<p class="text-white text-xs sm:text-sm leading-6">We transport light and heavy cargo via the shortest routes that have been extensively mapped from our experience</p>
+<i class="fa fa-arrow-right text-blue-200"></i></div></div></main></section>
+<section><div></div><iframe src="sign.html?color=text-gray-800" class="vh-full w-full"></iframe></section><section class="relative">
+<img src="img/7--Recovered.png" class="w-60 sm:w-auto m-auto filter invert">
+<img src="img/7-no fill.png" class="mt-5 w-60 sm:w-auto sm:mt-12 m-auto filter invert">
+<p class="m-10 text-center">The idea here is to represent the spots on the sliced ball above as major cities, locations, countries reached by the company in their experience.<br></p>
+
+</section></main>
+
+
+
+    <script type="module" src="main.js"></script>
+<script>
+  function afterScaffold() {
+    html.classList.add('loaded'), qs('[src*=hero]').classList.add('show'),
+    setTimeout(_=>[qs('nav')].forEach(el=>el.classList.add('show')), 600)
+  }
+  
+  w.onbeforeunload=_=>{
+    [qs('[src*=hero]'), qs('nav')].forEach(el=>el.classList.remove('show'));
+    return 'Return this string to prompt before leaving or refreshing the page'
+  };
+  w.addEventListener('DOMContentLoaded', (main, txts, intro, vars=[], rellax)=>{
+    animations.addRippleAnimations(), (main=qs('main')).onscroll = ev=>{
+      onScroll(main)
+    },
+    rellax = new Rellax('.rellax', {wrapper:main}),
+    !vars[0]&&(vars[0]=main.querySelector('.__marquee__')), !vars[1]&&(vars[1]=setInterval(_=>(vars[2]===(++vars[0].scrollLeft, vars[0].scrollLeft)
+        && (vars[0].scrollLeft=0), vars[2]=vars[0].scrollLeft),1000/60)),
+
+    main.omousemove=(e, sL, pXY=[], scrolled=[])=>{
+     if (!e) var e = window.event;
+        scrolled = ['Left', 'Top'].map(mv=>d.body.scroll+mv + d.body.scroll+mv);
+		if (e.pageX || e.pageY) 	{
+			pxY = [e.pageX, e.pageY]
+		}
+		else if (e.clientX || e.clientY) 	{
+			pXY = [e.clientX + scrolled[0], e.clientY + scrolled[1]]
+		}
+        setTimeout(_=>console.log('[X, Y]', pXY), 500)
+    },
+    txts = ['shipment', 'cargo', 'freight', 'parcels', 'packages', 'deliveries'],
+    (intro=qs('aside h2')).innerHTML=['R','Z','O','N','E', ' ','•'].concat(txts[Math.random()*txts.length|0].split('')).map((e, i)=>`<span ${i<6?"class='font-fredoka font-semibold'":i==6&&"class='mx-2'"||"class='__morph'"} style='--delay:${i*0.02}s'>${e}</span>`).join('')
+  })  
+</script>
+  
+
+
+</body>
