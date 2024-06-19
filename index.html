@@ -4,7 +4,96 @@
     <link rel="stylesheet" href="css/page.css"><link rel="stylesheet" href="css/all.min.css">
 	<script src="./js/utils.js"></script>
     <script src="./js/index.js"></script><script src="../js/ripples.js"></script><script src="../js/rellax.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>.road-motion-y {
+<style>
+
+    .package {
+      position: relative;
+      margin: 0 auto;
+      height: min(25vw, 200px);
+      width: min(25vw, 200px);
+      -webkit-transform-style: preserve-3d;
+    }
+    .package .plane {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      border: 2px solid black;
+      color: transparent;
+      background-color: rgba(255, 255, 255, 0.3);
+      -webkit-transition: -webkit-transform 2s, opacity 2s;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .package.backfaces .plane {
+      -webkit-backface-visibility: visible;
+    }
+    
+    .package {
+      -webkit-animation: spin 8s infinite linear;
+    }
+
+    @-webkit-keyframes spin {
+      from { -webkit-transform: rotateY(0deg); }
+      to   { -webkit-transform: rotateY(-360deg); }
+    }
+
+    /* ---------- cube styles ------------- */
+    .cube > .one {
+      opacity: 0.5;
+      -webkit-transform: scale3d(1.2, 1.2, 1.2) rotateX(90deg) translateZ(min(calc(25vw / 1.2), 100px));
+    }
+
+    .cube > .two {
+      opacity: 0.5;
+      -webkit-transform: scale3d(1.2, 1.2, 1.2) translateZ(min(calc(25vw / 1.2), 100px));
+    }
+
+    .cube > .three {
+      opacity: 0.5;
+      -webkit-transform: scale3d(1.2, 1.2, 1.2) rotateY(90deg) translateZ(min(calc(25vw / 1.2), 100px));
+    }
+
+    .cube > .four {
+      opacity: 0.5;
+      -webkit-transform: scale3d(1.2, 1.2, 1.2) rotateY(180deg) translateZ(min(calc(25vw / 1.2), 100px));
+    }
+
+    .cube > .five {
+      opacity: 0.5;
+      -webkit-transform: scale3d(1.2, 1.2, 1.2) rotateY(-90deg) translateZ(min(calc(25vw / 1.2), 100px));
+    }
+
+    .cube > .six {
+      opacity: 0.5;
+      -webkit-transform: scale3d(1.2, 1.2, 1.2) rotateX(-90deg) translateZ(min(calc(25vw / 1.2), 100px)) rotate(180deg);
+    }
+
+
+    .cube > .seven {
+      -webkit-transform: scale3d(0.8, 0.8, 0.8) rotateX(90deg) translateZ(min(calc(25vw / 2), 100px)) rotate(180deg);
+    }
+
+    .cube > .eight {
+      -webkit-transform: scale3d(0.8, 0.8, 0.8) translateZ(min(calc(25vw / 2), 100px));
+    }
+
+    .cube > .nine {
+      -webkit-transform: scale3d(0.8, 0.8, 0.8) rotateY(90deg) translateZ(min(calc(25vw / 2), 100px));
+    }
+
+    .cube > .ten {
+      -webkit-transform: scale3d(0.8, 0.8, 0.8) rotateY(180deg) translateZ(min(calc(25vw / 2), 100px));
+    }
+
+    .cube > .eleven {
+      -webkit-transform: scale3d(0.8, 0.8, 0.8) rotateY(-90deg) translateZ(min(calc(25vw / 2), 100px));
+    }
+
+    .cube > .twelve {
+      -webkit-transform: scale3d(0.8, 0.8, 0.8) rotateX(-90deg) translateZ(min(calc(25vw / 2), 100px));
+    }
+/* End of stylesheet for 3d packaging box*/
+.road-motion-y {
 	  animation: road-motion-y 2s linear infinite;
 	}
 	.road-motion {
@@ -186,7 +275,7 @@
     <div class="relative text-center h-1/2 bg-gray-700 text-white"><button class="text-current absolute inset-0">Home</button></div><div class="relative text-center h-1/2 bg-blue-300"><button class="ripple text-current absolute inset-0" onclick="objWalk(this, [{7:'pN'},'cL']).remove('show')">close</button></div>
 </div><div class="sm:inline-block hidden h-full w-2/3 bg-gray-100"></div></div><div class="h-1/2 bg-yellow-100"></div>
 </div><div class="h-full w-1/2 bg-blue-100"></div></div><div class="h-1/2 bg-gray-100"></div></div><div class="relative w-1/2 h-full"><div class="no-hover no-focus tooltip slide bg-red-200 absolute inset-0 show" style="--x: 0%;"></div><div style="background-image: url(img/canyon.png)" class="absolute inset-0"></div><div class="relative h-full w-full" style="background: #00000095;"></div></div></div></nav>
-<h1 class="text-white fixed precise-typo-1 top-1/2 sm:top-1/3 w-full text-center text-black">RZONE</h1><main class="text-center [&>*]:text-left">
+<h1 class="fixed precise-typo-1 top-1/2 sm:top-1/3 w-full text-center text-black text-white">RZONE</h1><main class="text-center [&>*]:text-left">
 
 <svg class="overflow-visible scene intro" width="1440" preserveAspectRatio="xMinYMid slice" viewBox="0 0 1440 800" xmlns:pathdata="http://www.codrops.com/">
 					<defs>
@@ -272,10 +361,10 @@
 					</g></svg>
 
 				<section class="text-gray-900 bg-gray-200 z-1">
-				<div class="h-28"></div>
+				<div class="h-36"></div>
 				<div class="m-5 sm:w-1/3 sm:float-left">
 	
-	<h2 class="whitespace-pre precise-typo relative inline-block"><span class="-right-3 left-0 duration-300 ease-out absolute m-px">R-Zone • <span class="relative inline-block"><p class="tooltip no-hover no-focus slide-y relative">Freight</p><p class="top-0 tooltip no-hover no-focus slide-y absolute ">Delivery</p><p class="top-0 tooltip no-hover no-focus slide-y absolute show">Cargo</p></span></span>R-Zone • <span class="relative inline-block"><p class="tooltip no-hover no-focus slide-y relative">Freight</p><p class="top-0 tooltip no-hover no-focus slide-y absolute">Delivery</p><p class="top-0 tooltip no-hover no-focus slide-y absolute show">Cargo</p></span></h2>
+	<h2 class="whitespace-pre precise-typo relative inline-block"><span class="-right-3 left-0 duration-300 ease-out absolute m-px">R-Zone • <span class="relative inline-block"><p class="tooltip no-hover no-focus -slide-y relative" style="z-index: auto;">Freight</p><p class="top-0 tooltip no-hover no-focus -slide-y absolute " style="z-index: auto;">Delivery</p><p class="top-0 tooltip no-hover no-focus -slide-y absolute show" style="z-index: auto;">Cargo</p></span></span>R-Zone • <span class="relative inline-block"><p class="tooltip no-hover no-focus slide-y relative" style="z-index: auto;">Freight</p><p class="top-0 tooltip no-hover no-focus slide-y absolute" style="z-index: auto;">Delivery</p><p class="top-0 tooltip no-hover no-focus slide-y absolute show" style="z-index: auto;">Cargo</p></span></h2>
 <span class="backdrop-filter backdrop-blur my-2 p-2 inline-block relative" style="--tw-bg-opacity:0.4">We've sorted the major services our clients request for based on the experience garnered since <a></a><a class="inline-block font-bookweb p-2 bg-squiggle" href="javascript:void(0)">2012</a> for convenience - click on a service similar to your needs in menu <a class="font-semibold inline-block relative"><span class="relative sm:absolute sm:invisible">below ↓</span><span class="absolute sm:relative sm:show tooltip no-hover no-focus slide-y" style="z-index:auto">beside →</span></a> to reveal convincing information about it.
 </span><button class="rounded-lg relative ripple p-3 border-2 shadow border-gray-100 bg-gray-200">request a quote</button></div><div style="font-size: clamp(1.5rem, 0.63rem + 3.48vw, 2.3rem);" onclick="let gs = qsa('svg.scene g'), t=event.target, lnks=slice(this.querySelectorAll('a')); if(t.tagName!=='DIV') t=qs(`svg.scene .blob-${1+lnks.indexOf(t.tagName==='SPAN'?t.parentNode:t)}`), bloat(t)" class="lg:mr-48 sm:mr-6 duration-300 ease-out text-center base:inline-block sm:float-right sm:text-left">
 	
@@ -309,11 +398,11 @@
 
  </section>
 			</section>
-            <section class="z-1 relative  pt-20 bg-white">
+            <section class="z-1 relative  py-20 bg-white">
 
     <p class="text-center precise-typo m-auto w-5/6 sm:w-3/4 mb-8">RZone has successfully shipped hundreds of packages of worth beyond compare to clientele countries wide apart. The worth of goods shipped and packages deilvered is over $40 M yet no single incidence of misplacement of deliveries has ever occured</p>
 <section class="relative text-center precise-typo-1 w-full word-break" style="sfont-size: clamp(7rem, 3.63rem + 13.48vw, 10.1rem); line-height:1.3;"><h2 class="inline-block mb-10">since</h2> 
-  <div class="mt-4 absolute w-full text-sm text-left z-1 xl:top-1/4 xl:mt-16">
+  <div class="mt-3 absolute w-full text-sm text-left z-1 xl:top-1/4 xl:mt-12">
   
 <div class="-mt-3 overflow-hidden bg-black h-1.5 absolute w-full top-0"><aside class="whitespace-pre inline-block [&>*]:inline-block space-x-24 [&>*]:p-xy top-0 -mt-2 absolute -ml-6" style="animation: x-full 4s linear infinite; --py:5px; --px:0.9em;"><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div><div class="bg-white"></div></aside></div><div class="absolute text-2xl flex -bottom-4 left-0 right-0 mx-4 justify-around [&>*]:relative -top-9">
   <span><i class="fa fa-ship p-3 py-3.5 inline-block bg-blue-200 rounded-full"></i><i class="fa fa-truck-loading p-3 py-3.5 inline-block bg-blue-200 rounded-full tooltip no-hover no-focus -slide-y sm:show absolute sm:relative"></i><i class="fa fa-plane p-3 py-3.5 inline-block bg-blue-200 rounded-full tooltip no-hover no-focus slide-y md:show absolute md:relative"></i><i class="fa fa-shipping-fast p-3 py-3.5 inline-block bg-blue-200 rounded-full tooltip no-hover no-focus -slide-y md:show absolute md:relative"></i></span><span><i class="fa fa-box-open p-3 py-3.5 inline-block bg-white rounded-full mr-2"></i><i class="fa fa-box p-3 py-3.5 inline-block bg-white rounded-full tooltip base:show no-hover no-focus slide base:relative absolute"></i>
@@ -341,24 +430,24 @@
   
 
 <hr class="p-px bg-black">
-<div class="bg-squiggle [&>*]:align-middle [&>*]:inline-block text-center py-5 sm:py-8 md:py-12 flex items-center justify-around">
+<div class="bg-squiggle [&>*]:align-middle [&>*]:inline-block text-center py-8 sm:py-12 md:py-14 flex items-center justify-around">
   <div class="tooltip show no-hover no-focus slide text-8xl" style="z-index:auto">200K
 <p class="text-base">transportation requests fufilled</p>
 </div><div class="tooltip no-hover no-focus slide absolute left-0 text-8xl sm:show sm:relative ml-12 md:mr-12" style="z-index:auto">200K
-<p class="text-sm">packages designed and handled</p>
+<p class="text-base">packages designed and handled</p>
 </div><div class="tooltip no-hover no-focus slide absolute left-0 text-8xl lg:show lg:relative" style="z-index:auto">200K
-<p class="text-sm">deliveries cemented</p>
+<p class="text-base">deliveries cemented</p>
 </div>
 </div>
 <div style="background:#222;" class="py-6 w-full rounded-b-3xl p-4 text-white precise-typo [&>*]:inline-block [&>*]:align-middle [&>*]:whitespace-normal whitespace-pre __marquee__ space-x-4 overflow-x-hidden font-bookweb"><span class="ml-5">SHIPMENT</span><i class="text-xl fa fa-star"></i><span>FREIGHT</span><i class="text-xl fa fa-star"></i><span>CARGO</span><i class="text-xl fa fa-star"></i><span>CARGO</span><i class="text-xl fa fa-star"></i><span>SHIPMENT</span><i class="fa fa-star text-xl"></i><span>FREIGHT</span><i class="fa fa-star text-xl"></i><span>CARGO</span><i class="text-xl fa fa-star"></i><span>SHIPMENT</span><i class="text-xl fa fa-star"></i><span>FREIGHT</span><i class="text-xl fa fa-star"></i><span>CARGO</span><i class="text-xl fa fa-star"></i><span>SHIPMENT</span><i class="text-xl fa fa-star"></i><span>FREIGHT</span></div>
 </section>
 <section class="vh-full relative"><h3 class="pt-20 precise-typo p-6 bg-gray-50">Experience a hassle-free delivery of packages today</h3></section>
 
-<section class="mt-10 bg-blue-50 relative">
-<h2 style="font-size: clamp(5rem, 2.826rem + 8.7vw, 7rem);" class="relative text-gray-700 bg-white font-bookweb font-semibold text-center">Transport</h2><section class="[&>*]:align-middle [&>*]:inline-block px-11">
+<section class="mt-10 bg-white relative">
+<h2 style="font-size: clamp(5rem, 2.826rem + 8.7vw, 7rem);" class="relative text-gray-700 bg-blue-50 font-bookweb font-semibold text-center">Transport</h2><section class="[&>*]:align-middle [&>*]:inline-block px-11 text-center [&>*]:text-left">
 
-<h4 class="precise-typo w-full mb-7">Customized solutions for your <a href="javascript:void(0)" class="text-blue-700">business</a></h4><section style="--px:1.2em; --py:1.2em" class="[&>*]:p-xy [&>*]:inline-block rounded-2xl text-center [&>*]:text-left sm:text-left">
-  <div class="border-2 border-gray-300 rounded-inherit text-xs w-56">
+<h4 class="precise-typo w-full my-7">Customized solutions for your <a href="javascript:void(0)" class="text-blue-700">business</a></h4><section style="--px:1.2em; --py:1.2em" class="[&>*]:p-xy [&>*]:inline-block rounded-2xl text-center [&>*]:text-left sm:text-left">
+  <div class="border-2 border-gray-300 rounded-inherit text-xs w-56 mr-5">
   <h5 class="mb-3 text-base font-semibold"><i class="fa fa-shipping-fast p-2 bg-blue-300 rounded-full mr-2"></i>By Land</h5>
 
   <span class="text-gray-400">COST</span>
@@ -369,7 +458,7 @@ From $2.5 per lbs
 <hr>
 Up to 44, 00 lbs
 <br><br>
-</div><div class="border-2 border-gray-300 rounded-inherit text-xs w-56 m-5">
+</div><div class="border-2 border-gray-300 rounded-inherit text-xs w-56 mr-5 my-5">
   <h5 class="mb-3 text-base font-semibold"><i class="fa fa-plane p-2 bg-blue-300 rounded-full mr-2"></i>By Air</h5>
 
   <span class="text-gray-400">COST</span>
@@ -396,27 +485,46 @@ Up to 44, 00 lbs
 <hr class="my-10 relative w-full h-3 bg-gray-300 rounded-full">
 
 
-<div class="[&>*]:inline-block [&>*]:align-middle pr-8"><div class="h-36 w-36 relative">
+<div class="[&>*]:inline-block [&>*]:align-middle sm:mr-5"><div class="h-36 w-36 relative">
 <div class="rounded-lg absolute inset-3 overflow-hidden rounded-full decorate"><div style="--tw-bg-opacity: 0.5" class="duration-500 bg-blue-300 shadow rounded-full transform-gpu absolute inset-8 scale-150"></div><div style="--tw-bg-opacity: 0.7" class="duration-700 inset-11 bg-blue-500 shadow rounded-full transform-gpu scale-150 absolute"></div><div style="--tw-bg-opacity: 0.8" class="duration-700 inset-14 bg-blue-700 shadow rounded-full transform-gpu scale-150 absolute"></div></div>
-<p class="relative text-sm">order</p></div>
-<p class="-ml-3">some text here for context</p></div><div class="relative overflow-hidden rounded-xl">
+</div>
+<p class="-ml-3 absolute invisible">some text here for context</p></div><div class="relative overflow-hidden rounded-xl m-2">
 <img src="img/ship-under-bridge.jpg">
 <div style="background-image: url(img/bridge-vert.jpg); left:calc(25% + 2.5em);" class="top-0 bottom-0 w-28 sm:w-24 absolute bg-repeat-y road-motion-y bg-center bg-contain tooltip slide no-hover no-focus show">
 <img src="img/truck-vert.png" class="absolute right-8 sm:right-6 bottom-1/3 sm:w-auto sm:mb-5 mb-3 w-3 mr-1">
 </div>
 
 </div>
-<div class="relative h-32 bg-cover w-96 road-motion bg-repeat-x" style="background-image:url(img/bridge.jpg)">
+<div style="background-image:url(img/bridge.jpg)" class="relative h-32 bg-cover w-96 road-motion bg-repeat-x tooltip no-hover no-focus">
   
 <hr class="absolute left-0 w-8 h-full border-0 bg-gradient-to-r from-white"><hr class="absolute top-0 h-10 w-full border-0 bg-gradient-to-b from-white"><div class="mb-0.5 ml-5 left-1/3 w-32 h-8 bg-contain bg-no-repeat bottom-0 absolute transform" style="background-image:url(img/truck.png)"></div>
 <hr class="absolute right-0 w-5 h-full border-0 bg-gradient-to-l from-white"><hr class="absolute bottom-0 h-8 w-full border-0 bg-gradient-to-t from-white"></div></section>
-<h2 class="mt-20 relative text-gray-700 bg-white precise-typo-1 font-bookweb font-semibold text-center" style="font-size: clamp(5rem, 2.826rem + 8.7vw, 7rem);">Packaging</h2><h2 style="font-size: clamp(5rem, 2.826rem + 8.7vw, 7rem);" class="mt-20 relative text-gray-700 bg-white precise-typo-1 font-bookweb font-semibold text-center pb-32">Delivery</h2><div style="background-image:url(img/world-map-light.png)" class="relative z-1 bg-black bg-center mb-40"><h1 style="--tw-bg-opacity:0.1" class="precise-typo-1 w-full text-center text-black relative">RZONE</h1></div>
+<h2 class="mt-20 relative text-gray-700 bg-blue-50 precise-typo-1 font-bookweb font-semibold text-center" style="font-size: clamp(5rem, 2.826rem + 8.7vw, 7rem);">Packaging</h2>
+<section class="vh-full pt-60 [&>*]:text-left text-center [&>*]:inline-block">
+	<aside class="relative" style="transform-style:preserve-3d; transform: rotateX(-45deg) rotate(-10deg)">
+		<div class="m-auto cube rounded-xl sm:h-96 h-72 w-2/3 sm:w-96 package relative [&>*]:rounded-inherit backfaces">
+			<div class="plane one">1</div>
+			<div class="plane two">2</div>
+			<div class="plane three">3</div>
+			<div class="plane four">4</div>
+			<div class="plane five">5</div>
+			<div class="plane six">6</div>
+			<div class="plane seven">7</div>
+			<div class="plane eight">8</div>
+			<div class="plane nine">9</div>
+			<div class="plane ten">10</div>
+			<div class="plane eleven">11</div>
+			<div class="plane twelve">12</div>
+		</div>
+	</aside>
+</section>
+<h2 style="font-size: clamp(5rem, 2.826rem + 8.7vw, 7rem);" class="mt-20 relative text-gray-700 bg-blue-50 precise-typo-1 font-bookweb font-semibold text-center pb-32">Delivery</h2><div style="background-image:url(img/world-map-light.png)" class="relative z-1 bg-black bg-center"><h1 style="--tw-bg-opacity:0.1" class="precise-typo-1 w-full text-center text-black relative">RZONE</h1></div>
 </section>
 
 		</main>
     
 <script>
-DOMLoaded=0, debug = !0;
+DOMLoaded=0, debug = ~w.location.search.search('debug');
 
 function bloat(g, flag, scene) {
   if(debug) return;
@@ -438,7 +546,7 @@ function tagify(el, tag) {
 
 function afterRender(paths, fn, menu) {
   if(debug) return;
-
+  setInterval(_=>forEach(qsa('h2 p.show'), (e,n,o)=>[(o = objWalk)(e, 'nES') || o(e, ['pN', 'fEC']), e].forEach(e=>o(e, 'cL').toggle('show'))), 3000),
   qsa('.menu__item').forEach(item=>item.classList.add('animate')),
   fn=v=>(paths ||= qsa('svg.scene path')).forEach((path, st)=>{(st=path.style).transform = `scale3d(${v}, ${v}, ${v})`;
     st.opacity = (v|0)+''
@@ -481,5 +589,4 @@ let stack = [];
     }
 </script>
   
-
 </body>
